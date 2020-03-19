@@ -23,7 +23,7 @@ class RegVC: UIViewController {
     @IBOutlet weak var fname: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Buttonediting()
         // Do any additional setup after loading the view.
     }
     
@@ -32,6 +32,20 @@ class RegVC: UIViewController {
         print("submitbtn")
         postdata()
     }
+    
+    func Buttonediting(){
+        submitbtn.layer.cornerRadius = 10
+        submitbtn.layer.shadowOffset = .zero
+        submitbtn.layer.shadowOpacity = 1
+        submitbtn.layer.shadowRadius = 3
+        submitbtn.layer.shadowColor = UIColor.blue.cgColor
+        district.layer.cornerRadius = 10
+        district.layer.shadowOffset = .zero
+        district.layer.shadowOpacity = 1
+        district.layer.shadowRadius = 3
+        district.layer.shadowColor = UIColor.blue.cgColor
+    }
+    
     func postdata(){
         func postdata(){
             let parameters = ["FirstName": fname.text!,"LastName":lname.text!,"mobile":mobile.text!,"email":mail.text!,"gender":gender.text!,"district":confirmpass.text!,"location":locatn.text!, "password": pass.text!] as [String : Any]
